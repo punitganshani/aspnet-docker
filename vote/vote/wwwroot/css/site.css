@@ -1,0 +1,26 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Open Sans';
+}
+
+button {
+    border-radius: 0;
+    width: 100%;
+    height: 100px;
+}
+
+    button.OptionA {
+        background-color: #1aaaf8;
+    }
+
+    button.OptionB {
+        background-color: #00cbca;
+    }
