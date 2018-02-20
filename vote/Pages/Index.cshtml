@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Docker example";
+}
+
+<div class="container text-center">
+    <div class="row center">
+        <h2>Docker Voting Sample</h2>
+        <h3>@Model.OptionA.Title vs @Model.OptionB.Title!</h3>
+    </div>
+    <div class="row">
+        <br />
+    </div>
+    <div class="row">
+        <form method="POST">
+            @Html.AntiForgeryToken()
+            <div class="col-lg-6">
+                <button id="optionA" type="submit" name="Vote" class="OptionA btn-default" value="@Model.OptionA.Title">@Model.OptionA.Title</button>
+            </div>
+            <div class="col-lg-6">
+                <button id="optionB" type="submit" name="Vote" class="OptionB btn-default" value="@Model.OptionB.Title">@Model.OptionB.Title</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <br />
+    </div>
+    <div class="row">
+        @if (!string.IsNullOrEmpty(Model.Vote))
+        {
+            <span>Thank you for selecting <strong>@Model.Vote</strong></span>
+            <br />
+            <br />
+        }
+    </div>
+    <div class="row">
+        Processed by container ID <strong>@Model.HostName</strong>
+    </div>
+</div>
+
+@section Scripts
+    {
+
+    <script type="text/javascript">
+              var vote = '@Model.Vote';
+              if(vote == '@Model.OptionA.Title'){
+                $(".OptionA").prop('disabled', true);
+                $(".OptionA").html('@Model.OptionA.Title <i class="fa fa-check-circle"></i>');
+                $(".OptionB").css('opacity','0.5');
+              }
+              if(vote == '@Model.OptionB.Title'){
+                $(".OptionB").prop('disabled', true);
+                $(".OptionB").html('@Model.OptionB.Title <i class="fa fa-check-circle"></i>');
+                $(".OptionA").css('opacity','0.5');
+              }
+
+    </script>
+}

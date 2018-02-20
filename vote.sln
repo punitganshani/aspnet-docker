@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vote", "vote\vote.csproj", "{2B4EA42F-5737-4A08-83C0-41F1E2FDD3B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vote", "vote\vote.csproj", "{2B4EA42F-5737-4A08-83C0-41F1E2FDD3B3}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6AB2A493-253F-4778-86F8-BF50DA62F16C}"
 EndProject

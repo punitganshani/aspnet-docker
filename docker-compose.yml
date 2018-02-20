@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  vote:
+    image: vote
+    container_name: voteapp
+    build:
+      context: .
+      dockerfile: vote/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+    container_name: redis
+    entrypoint: redis-server --appendonly yes
+    hostname: redis
+    volumes:
+      - redis-data:/data
+    restart: always
+
+volumes:
+  redis-data:
+

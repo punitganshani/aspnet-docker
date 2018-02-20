@@ -1,0 +1,30 @@
+﻿@page
+@model vote.Pages.ViewModel
+@{
+    ViewData["Title"] = "Docker example";
+}
+
+<div class="container text-center">
+    <div class="row center">
+        <h2>Docker Voting Sample Results</h2>
+        <h3>@Model.OptionA.Title vs @Model.OptionB.Title!</h3>
+    </div>
+    <div class="row">
+        <br />
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <button id="optionA" type="submit" name="Vote" disabled class="OptionA btn-default" value="@Model.OptionA.Title">@Model.OptionA.Title (<strong>@Model.OptionA.Counter</strong>)</button>
+        </div>
+        <div class="col-lg-6">
+            <button id="optionB" type="submit" name="Vote" disabled class="OptionB btn-default" value="@Model.OptionB.Title">@Model.OptionB.Title (<strong>@Model.OptionB.Counter</strong>)</button>
+        </div>
+    </div>
+    <div class="row">
+        <br />
+    </div>
+
+    <div class="row">
+        Processed by container ID <strong>@Model.HostName</strong>
+    </div>
+</div>
