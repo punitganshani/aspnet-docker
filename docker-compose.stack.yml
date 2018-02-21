@@ -2,17 +2,16 @@ version: '3'
 
 services:
   vote:
-    image: vote
+    image: punitganshani/aspnet-docker-vote
     container_name: voteapp
-    build:
-      context: .
-      dockerfile: vote/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     depends_on:
       - redis
+    ports:
+      - "8080:80"
     deploy:
-      replicas: 2
+      replicas: 5
       update_config:
         parallelism: 2
       restart_policy:
