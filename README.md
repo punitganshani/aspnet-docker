@@ -14,9 +14,9 @@ docker swarm join --token SWMTKN-1-5m8equ2v9ifgg54au9thnmas5z458dkpsgs9ghzwqiyyc
 ## Dockers
 
 
-Stop all containers: `docker kill $(docker ps -q)`
-Remove all containers. `docker rm $(docker ps -a -q)`
-Remove all docker images. `docker rmi $(docker images -q)`
+- Stop all containers: `docker kill $(docker ps -q)`
+- Remove all containers. `docker rm $(docker ps -a -q)`
+- Remove all docker images. `docker rmi $(docker images -q)`
 
 
 ## Compose and Run
